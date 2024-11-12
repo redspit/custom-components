@@ -4,9 +4,11 @@ class Counter extends LitElement {
 	static styles = css`
 		div {
 			color: green;
-			background-color: gold;
-			width: 400px;
+			background-color: #141414FF;
+			border-radius: 15px;
+			width: 600px;
 			margin: 0rem 4rem;
+			padding: 1.2rem 0rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -16,29 +18,62 @@ class Counter extends LitElement {
 		}
 		.b {
 			border-radius: 5px;
-			border-color: green;
+			border:0;
+			/*border-color: white;*/
 			background-color: peru;
 			padding: 8px 40px;
+			box-shadow: 0 0 0 white;
 		}
 
 		.b:hover {
-			opacity: 0.5;
+			opacity: 0.9;
 			cursor: pointer;
+			box-shadow: 3px 3px 5px gold;
+		}
+		.a {
+			background-color: #b9b4b9ff;
+		}
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 15px;
 		}
 	`
-    static properties = {
-        count: {type:Number}
-}
+	static properties = {
+		count: { type: Number },
+		total: { type: String },
+	}
 	constructor() {
 		super()
-		this.count = 5
+		this.count = 0
+		this.total = "Total"
 	}
 
 	render() {
 		return html`<div>
-			<div>Current Count Is: ${this.count}</div>
-            <div></div>
-			<button @click=${() => this.count++} class="b">COUNT</button>
+			<div>The Current ${this.total} Is: ${this.count}</div>
+			<div class="container">
+				<button
+					@click=${() => {
+						this.count++
+						this.total = "Total with discount"
+					}}
+					class="b"
+				>
+					COUNT
+				</button>
+				<button
+					@click=${() => {
+						this.count = 0
+						this.total = "Total"
+					}}
+					class="b a"
+				>
+					Reset
+				</button>
+			</div>
 		</div>`
 	}
 }
