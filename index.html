@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Basic Web Components</title>
+        <link rel="stylesheet" href="./main.css" />
+        <script src="./main.js" type="module"></script>
+
+        <script src="./logo.js" type="module"></script>
+        <script src="./counter.js" type="module"></script>
+        <script src="./counter-lit.js" type="module"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Basic Web Components</h1>
+        </header>
+        <main>
+            <logo-b><span slot="title">Load</span></logo-b>
+            <div style="padding-top: 10px">
+                <logo-b><div slot="title">Load 2</div></logo-b>
+            </div>
+        </main>
+        <counter-div></counter-div>
+        <!-- <counter-div></counter-div>
+        <counter-div></counter-div> -->
+        <counter-lit></counter-lit>
+    </body>
+
+</html>

@@ -1,0 +1,47 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 20px;
+	/* color-scheme: dark; */
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+header,
+main {
+	padding: 1rem 4rem;
+}
+.b {
+	border-radius: 5px;
+	border-color: green;
+	background-color: peru;
+	padding: 8px 40px;
+}
+
+.b:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
+/* style for shadow root */
+:host(logo-b) {
+	background-color: gold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 400px;
+}
+/* if shadow root is under div element */
+:host-context(div) {
+	background-color: lawngreen;
+}
+/* slot of shadow root logo-b */
+:host(logo-b) ::slotted(div) {
+	color: powderblue !important;
+	font-size: 1.2rem;
+}
+::part(btn) {
+	background-color: violet;
+}
